@@ -1,0 +1,6 @@
+{
+"bottoken" : "твойтокенбота",
+"url" : "https://api.openai.com/v1/chat/completions",
+"apichat" : "Bearer твойапикодчатгпт",
+"prodiaurl" : "https://api.prodia.com"
+}
