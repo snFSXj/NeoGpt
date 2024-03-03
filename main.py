@@ -58,25 +58,6 @@ async def registration(message: types.Message):
 async def start(message: types.Message):
   await message.answer('Привет! Добро пожаловать в NeoGPT! \nЯ бот, который создан для использования ChatGPT в Telegram!\nПройдите регистрацию посредством команды /register для использования бота')
 
-@dp.message(Command('off'))
-async def shutdown(message: types.Message):
-    if message.from_user.id == 5802369201:
-        await message.answer("Выключение...")
-        sys.exit()
-    else:
-        await message.answer("У вас нет доступа к этой команде.")
-
-@dp.message(Command("allid"))
-async def allid(message: types.Message):
-   if message.from_user.id == 5802369201:
-       conn = sqlite3.connect('alluser.db')
-       cursor = conn.cursor()
-       cursor.execute("SELECT * FROM users;")
-       rows = cursor.fetchall()
-       rows = str(rows)
-       await message.answer(rows)
-
-
 @dp.message(Command('uptime'))
 async def cmd_uptime(message: types.Message, command: CommandObject):
   if message.from_user.id in admins_id:
